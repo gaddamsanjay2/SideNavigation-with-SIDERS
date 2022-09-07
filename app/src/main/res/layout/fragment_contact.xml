@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.contacts.ContactFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <androidx.viewpager2.widget.ViewPager2
+            android:layout_width="match_parent"
+            android:id="@+id/viewpage2"
+            android:layout_height="250dp"
+            android:layout_margin="10sp"
+            />
+
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/search_contacts"
+            app:queryHint="Search here..."
+            android:background="@drawable/searchview_bg"
+            app:iconifiedByDefault="false"
+            android:layout_margin="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:hint=""
+            android:visibility="gone"
+            android:textSize="15sp"
+            android:id="@+id/count_contacts"
+            android:layout_margin="10dp"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            tools:listitem="@layout/custom_contacts"
+            android:id="@+id/recycler_contacts"/>
+
+    </LinearLayout>
+
+</FrameLayout>
